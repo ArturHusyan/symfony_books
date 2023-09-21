@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block main_content %}
+<h1> Add Author Page </h1>
+
+{% if status %}
+    <p>{{ status }}</p>
+{% endif %}
+
+<form action="{{ path('add_author') }}" method="post" name="authorAddForm">
+
+    <input type="text" id="name" name="name" value="" required />
+    <label for="name">Имя</label>
+    <br />
+
+    <input type="text" id="surname" name="surname" value="" required />
+    <label for="surname">Фамилия</label>
+    <br />
+    
+    <input type="submit" name="add" value="Добавить" />
+</form>
+
+{% endblock %}

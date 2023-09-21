@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href=" {{ asset('css/style.css') }} ">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block header %}
+                <div class="header_logo">
+                    <a href="{{ path('open_main_page') }}">MyBooks</a>
+                </div>
+            {% endblock %}
+        </header>
+
+        <main>
+            {% block main_content %}
+            
+            {% endblock %}
+        </main>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

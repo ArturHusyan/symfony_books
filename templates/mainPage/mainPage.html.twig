@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block main_content %}
+
+    <h1>Список авторов</h1>
+
+    <a class="btn" href="{{ path('open_add_author_page') }}">Добавить автора</a>
+
+    {% if not authorsList %}
+        <p class="empty-list">Пока список пуст!</p>
+    {% endif %}
+
+    {% for author in authorsList %}
+        <div class="author-item">  
+            <p>
+                <a class="btn" href="">{{ author.name }}</a>
+            </p>
+            <p>
+                <a class="btn" href="">{{ author.surname}}</a>
+            </p>  
+            <p>
+                <a class="btn" href="">Редактировать</a>
+            </p>
+            <p>
+                <a class="btn" href="">Список книг</a>
+            </p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
