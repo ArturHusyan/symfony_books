@@ -13,11 +13,8 @@
     {% for author in authorsList %}
         <div class="author-item">  
             <p>
-                <a class="btn" href="">{{ author.name }}</a>
+                <a class="btn" href="{{ path('open_author_page', {'id': author.id}) }}">{{ author.name }} {{ author.surname}}</a>
             </p>
-            <p>
-                <a class="btn" href="">{{ author.surname}}</a>
-            </p>  
             <p>
                 <a class="btn" href="">Редактировать</a>
             </p>

@@ -1,5 +1,41 @@
 {% extends "base.html.twig" %}
 
 {% block main_content %}
-<h1> Author Page </h1>
+<h1> Страница автора </h1>
+
+<h2>
+    {{ author.name }} {{ author.surname}}
+</h2>
+
+<h3>
+    Список книг
+</h3>
+
+{% for book in authorBooks %}
+    <div class="author-item">  
+        <p>
+            {{ book.title }}
+        </p>
+        <p>
+            <a class="btn" href="">Редактировать</a>
+        </p>
+        <p>
+            <a class="btn" href="">Удалить книгу</a>
+        </p>
+    </div>
+{% endfor %}
+
+<div>
+    {% if status %}
+        <p>{{ status }}</p>
+    {% endif %}
+    <form action="{{ path('add_book', {'author_id': author.id}) }}" method="post" name="bookAddForm">
+        <input type="text" id="title" name="title" value="" required />
+        <label for="title">Название</label>
+        <br />
+    
+        <input type="submit" name="add" value="Добавить книгу" />
+    </form>
+</div>
+
 {% endblock %}
